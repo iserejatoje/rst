@@ -1,0 +1,140 @@
+.pagination {
+  background: $asphalt;
+
+  .pagination-inner {
+    min-height: 80px;
+    padding: 12px 0;
+    align-items: center;
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+
+  span {
+    height: 20px;
+    width: 1px;
+    background: $silver;
+    display: inline-block;
+    margin: 0 20px;
+  }
+
+  a {
+    font-size: 18px;
+    line-height: 1.333;
+    color: $dark;
+    text-decoration: none;
+    transition: color 200ms ease-in-out;
+    letter-spacing: .5px;
+
+    &:hover {
+      color: $red;
+    }
+  }
+}
+
+.date {
+  color: $silver;
+  letter-spacing: .4px;
+}
+
+.detail-block {
+  .author {
+    margin-top: 34px;
+  }
+}
+
+.author {
+  color: $silver;
+  letter-spacing: .4px;
+}
+
+.detail-content {
+  font-size: 18px;
+  padding-top: 32px;
+  max-width: 990px;
+
+  b,
+  strong {
+    letter-spacing: 0.8px;
+    font-weight: 600;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    margin: 30px 0;
+  }
+
+  p {
+    line-height: 1.667;
+    margin: 0 0 20px 0;
+  }
+}
+
+.detail-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include respond($mobile) {
+    align-items: center;
+  }
+  @include respond($mobile) {
+    align-items: flex-start;
+  }
+  margin-bottom: 10px;
+
+  @include respond(0, $mobile) {
+    flex-direction: column;
+
+    .date {
+      margin-bottom: 15px;
+    }
+
+    .back-link {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.detail-subheading {
+  font-size: 20px;
+  max-width: 850px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 1px;
+}
+
+.back-link {
+  height: 46px;
+  display: flex;
+  border: 1px solid $silver;
+  align-items: center;
+  text-transform: uppercase;
+  color: $silver;
+  padding: 0 25px;
+  justify-content: center;
+  letter-spacing: .4px;
+
+  &:hover {
+    svg {
+      transform: translateX(-4px) rotate(180deg);
+    }
+  }
+
+  svg {
+    transition: transform 200ms ease-in-out;
+    margin-right: 9px;
+    width: 16px;
+    height: 16px;
+    transform: rotate(180deg);
+    fill: $red;
+  }
+}
+
+section.detail {
+  @include respond($mobile) {
+    padding: 60px 0 90px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 40px 0 50px 0;
+  }
+}

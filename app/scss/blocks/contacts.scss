@@ -1,0 +1,245 @@
+section.contacts {
+
+  @include respond($mobile) {
+    min-height: 729px;
+    display: flex;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+
+    &:first-child {
+
+      @include respond(1360px) {
+        padding-left: calc((100% - 1330px) / 2);
+      }
+      @include respond($mobile, 1360px) {
+        padding-left: 35px;
+      }
+      @include respond(0, $mobile) {
+        padding: 35px 15px;
+      }
+    }
+
+    &:last-child {
+      background: $red;
+
+      @include respond(0, $mobile) {
+        padding: 55px 15px;
+      }
+      @include respond($mobile) {
+        max-width: 992px;
+        width: 100%;
+      }
+      @include respond(1360px) {
+        padding-right: calc((100% - 1330px) / 2);
+        padding-left: 150px;
+      }
+      @include respond($mobile, 1360px) {
+        padding-right: 35px;
+        padding-left: 35px;
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input[type="tel"],
+    input[type="email"] {
+      line-height: 36px;
+      margin-bottom: 26px;
+      letter-spacing: .5px;
+    }
+
+    textarea {
+      min-height: 116px;
+      margin-bottom: 62px;
+      letter-spacing: .5px;
+      resize: none;
+    }
+
+    input,
+    textarea {
+      @extend .empty;
+      border-bottom: 2px solid $white;
+      font-size: 18px;
+      font-weight: 400;
+      color: $white;
+
+      &::placeholder {
+        color: $white;
+      }
+    }
+  }
+
+}
+
+.send-button {
+  max-width: 325px;
+  width: 100%;
+  border: 1px solid $white;
+  height: 90px;
+  @extend .empty;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: $white;
+  transition: background 200ms ease-in-out, color 200ms ease-in-out;
+
+  &:hover {
+    background: $white;
+    color: $red;
+  }
+}
+
+
+.form-title {
+  @include respond($laptop) {
+    font-size: 46px;
+  }
+  @include respond(0, $laptop) {
+    font-size: 30px;
+  }
+  font-weight: 600;
+  color: $white;
+  line-height: 1.304;
+  letter-spacing: 2px;
+  margin-bottom: 34px;
+}
+
+.preloader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#map {
+  background: $map;
+  @include respond($mobile) {
+    min-height: 700px;
+  }
+  @include respond(0, $mobile) {
+    height: 300px;
+  }
+}
+
+.address-block {
+  @include respond($mobile) {
+    max-width: 412px;
+    width: 100%;
+  }
+  display: flex;
+  flex-direction: column;
+
+  .address-item_icon {
+    &:not(:last-child) {
+      margin-bottom: 26px;
+    }
+
+    svg {
+      transform: translateY(6px);
+      @include respond($mobile) {
+        margin-right: 32px;
+      }
+      @include respond(0, $mobile) {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  svg {
+    fill: $red;
+  }
+}
+
+.address-item_additional {
+  margin-top: 10px;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  svg {
+    margin-right: 14px;
+  }
+}
+
+.address-label {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: $silver;
+}
+
+.address-item_content {
+  flex: 1;
+}
+
+.address-subheading {
+  font-size: 18px;
+  color: $dark;
+  letter-spacing: 0.6px;
+  line-height: 1.556;
+  text-align: left;
+}
+
+.address-heading {
+  @include respond($mobile) {
+    font-size: 24px;
+  }
+  @include respond(0, $mobile) {
+    font-size: 20px;
+  }
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: $dark;
+  line-height: 1.167;
+  margin-bottom: 14px;
+}
+
+.address-line {
+  height: 1px;
+  width: 100%;
+  background: $gray;
+  @include respond($mobile) {
+    margin: 20px 0 40px 0;
+  }
+  @include respond(0, $mobile) {
+    margin: 10px 0 25px 0;
+  }
+}
+
+.address-text {
+  @include respond($mobile) {
+    font-size: 20px;
+  }
+  @include respond(0, $mobile) {
+    font-size: 18px;
+  }
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.9px;
+}
+
+.address-item {
+  display: flex;
+
+  a {
+    color: $dark;
+    text-decoration: none;
+    transition: color 200ms ease-in-out;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+}

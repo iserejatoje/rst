@@ -1,0 +1,124 @@
+section.team {
+  background: $asphalt;
+  position: relative;
+  overflow: hidden;
+  min-height: 1108px;
+
+  @include respond($laptop) {
+    padding: 75px 0;
+  }
+  @include respond(0, $laptop) {
+    padding: 40px 0;
+  }
+
+  .card {
+    display: flex;
+    background: $white;
+    transition: box-shadow 200ms ease-in-out;
+
+    @include respond(0, $mobile) {
+      flex-direction: column;
+    }
+
+    &:active,
+    &:hover {
+      box-shadow: 0 5px 16px 0 rgba(63, 68, 73, 0.17);
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include respond($laptop) {
+      padding: 35px;
+    }
+    @include respond(0, $laptop) {
+      padding: 20px;
+    }
+  }
+
+  img {
+    @include respond(0, $mobile) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .person {
+    @include respond($laptop) {
+      font-size: 20px;
+    }
+    @include respond(0, $laptop) {
+      font-size: 18px;
+    }
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .role {
+    letter-spacing: .3px;
+    color: $silver;
+    line-height: 1.5;
+    //max-width: 260px;
+  }
+}
+
+.top-left {
+  left: -169px;
+  top: -104px;
+}
+
+.bottom-right {
+  right: -170px;
+  bottom: 105px;
+}
+
+section.management {
+  .team-offset {
+    margin-bottom: 30px;
+  }
+
+  .team-grid {
+    margin-bottom: 22px;
+  }
+}
+
+.team-offset {
+  @include respond($laptop) {
+    margin-top: 64px;
+  }
+  @include respond(0, $laptop) {
+    margin-top: 20px;
+  }
+}
+
+.team-grid {
+  display: grid;
+  grid-gap: 30px;
+  position: relative;
+  @include respond(900px) {
+    grid-template-columns: repeat(auto-fit, minmax(590px, auto));
+  }
+}
+
+.bottom-right,
+.top-left {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+
+  @include respond($laptop, 1555px) {
+    opacity: .35;
+  }
+  @include respond(1555px) {
+    opacity: 1;
+  }
+
+  @include respond(0, $laptop) {
+    display: none;
+  }
+}

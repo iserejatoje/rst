@@ -1,0 +1,303 @@
+.empty {
+  background: transparent;
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  width: 25px;
+  @extend .empty;
+
+  .burger-line {
+    height: 2px;
+    width: 100%;
+    border-radius: 3px;
+    background: $white;
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+header {
+  @include respond($mobile) {
+    padding: 0 42px;
+    min-height: 120px;
+  }
+  @include respond(0, $mobile) {
+    padding: 15px;
+  }
+  background: $dark;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  nav {
+    @include respond(0, $mobile) {
+      display: none;
+    }
+
+    a {
+      text-transform: uppercase;
+
+      &:after {
+        opacity: 0;
+        transition: opacity 200ms ease-in-out;
+        content: '';
+        position: absolute;
+        height: 2px;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        background: $blue;
+      }
+
+      &.active,
+      &:hover {
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 44px;
+      }
+    }
+
+  }
+
+  .contacts-info {
+    .contact-link {
+      &:first-child {
+        margin-right: 52px;
+      }
+    }
+
+    @include respond(0, $laptop) {
+      display: none;
+    }
+  }
+
+  a {
+    font-weight: 300;
+  }
+
+  img {
+    display: block;
+  }
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 1px;
+}
+
+.contacts-info {
+  .contact-link {
+    svg {
+      margin-right: 15px;
+      fill: $blue;
+    }
+  }
+}
+
+nav {
+  a {
+    position: relative;
+    letter-spacing: 1px;
+  }
+}
+
+.logo-link {
+  display: inline-block;
+}
+
+.container {
+  max-width: 1350px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.app-panel {
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+.app-inner {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex: 0 0 auto;
+  background: $dark;
+  color: $silver;
+
+  .contacts-info {
+    display: flex;
+    flex-direction: column;
+
+    @include respond(0, $mobile) {
+      align-items: center;
+    }
+
+    .contact-link {
+
+      @include respond($mobile) {
+        font-size: 20px;
+      }
+      @include respond(0, $mobile) {
+        font-size: 16px;
+      }
+
+      &:first-child {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  nav {
+    @include respond($mobile) {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-rows: repeat(2, auto);
+      grid-row-gap: 25px;
+      grid-column-gap: 75px;
+    }
+
+    @include respond(0, $mobile) {
+      padding: 40px 0;
+      display: grid;
+      grid-row-gap: 10px;
+    }
+
+    a {
+      font-weight: 600;
+
+      @include respond($mobile) {
+        font-size: 20px;
+      }
+      @include respond(0, $mobile) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .columns {
+    @include respond($mobile) {
+      min-height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @include respond(0, $mobile) {
+      padding: 50px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .column {
+        text-align: center;
+      }
+    }
+
+  }
+}
+
+.footer-content {
+  max-width: 240px;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: .7px;
+  line-height: 1.429;
+  padding-top: 14px;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+h1 {
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 2px;
+  color: $white;
+  line-height: 1.3;
+
+  @include respond($laptop) {
+    font-size: 46px;
+  }
+  @include respond(0, $laptop) {
+    font-size: 30px;
+  }
+
+}
+
+.description-18 {
+  font-size: 18px;
+  line-height: 1.556;
+  letter-spacing: .6px;
+}
+
+.heading-medium {
+  @include respond($laptop) {
+    font-size: 32px;
+  }
+  @include respond(0, $laptop) {
+    font-size: 28px;
+  }
+  letter-spacing: 1.3px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0 0 12px 0;
+}
+
+.app-panel_image {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transition: opacity 200ms ease-in-out;
+  user-select: none;
+
+  @include respond($laptop, 1555px) {
+    opacity: .35;
+  }
+  @include respond(1555px) {
+    opacity: 1;
+  }
+  @include respond(0, $laptop) {
+    right: -10px;
+    transform: rotate(270deg);
+  }
+  @include respond($laptop) {
+    left: 0;
+  }
+}
+
+.top-panel {
+  @include respond($laptop) {
+    min-height: 250px;
+  }
+  @include respond(0, $mobile) {
+    padding: 15px 0;
+  }
+  @include respond($mobile, $laptop) {
+    padding: 30px 0;
+  }
+  background: $gray;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}

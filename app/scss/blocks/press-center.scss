@@ -1,0 +1,80 @@
+section.press-center {
+  @include respond($mobile) {
+    padding: 82px 0 64px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 40px 0 50px 0;
+  }
+}
+
+.press-center_list {
+
+  .date {
+    margin-right: 40px;
+  }
+
+  .info {
+    font-size: 15px;
+    display: flex;
+    padding-top: 24px;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    display: flex;
+    border: 1px solid $silver;
+    color: $dark;
+    text-decoration: none;
+
+    @include respond(0, $mobile) {
+      flex-direction: column-reverse;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &:hover {
+      .title {
+        color: $red;
+      }
+    }
+  }
+
+  .content {
+    flex: 1;
+    @include respond($mobile) {
+      padding: 54px 75px;
+    }
+    @include respond(0, $mobile) {
+      padding: 25px;
+    }
+  }
+
+  .excerpt {
+    margin-top: 16px;
+    letter-spacing: .45px;
+    font-size: 15px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    letter-spacing: .7px;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+
+  img {
+    display: block;
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    transition: color 200ms ease-in-out;
+  }
+}

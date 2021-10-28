@@ -1,0 +1,139 @@
+.red-panel {
+  background: $red;
+  color: $white;
+  @include respond($mobile) {
+    min-height: 260px;
+  }
+  @include respond(0, $mobile) {
+    padding: 30px 0;
+  }
+  display: flex;
+  align-items: center;
+}
+
+section.numbers {
+  @include respond($mobile) {
+    padding: 95px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 40px 0;
+  }
+
+  .grid {
+    @include respond($mobile) {
+      margin-top: 55px;
+    }
+    @include respond(0, $mobile) {
+      margin-top: 25px;
+    }
+    display: grid;
+    grid-gap: 35px;
+    @include respond(700px) {
+      grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+    }
+
+    .title {
+      font-size: 34px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      margin-bottom: 5px;
+
+      span {
+        color: $red;
+      }
+    }
+
+    .description {
+      line-height: 1.625;
+      letter-spacing: 0.3px;
+      max-width: 300px;
+    }
+
+  }
+}
+
+section.models {
+  background: $asphalt;
+  padding: 95px 0;
+
+  .card {
+    border: 1px solid $red;
+    min-height: 300px;
+    padding: 35px 45px;
+
+    .content {
+      padding-top: 30px;
+    }
+
+    .line {
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        border-bottom: 1px dashed $white;
+        flex: 1;
+        height: 20px;
+        pointer-events: none;
+        margin: 0 5px;
+      }
+    }
+
+    .description {
+      letter-spacing: 0.3px;
+      max-width: 360px;
+    }
+
+    .title {
+      font-weight: 600;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .content-2 {
+      display: none;
+    }
+
+    &:hover {
+      color: $white;
+      background: $red;
+
+      .content-1 {
+        display: none;
+      }
+
+      .content-2 {
+        display: block;
+      }
+
+      .model-line {
+        color: $white;
+      }
+    }
+  }
+
+  .model-line {
+    font-size: 34px;
+    color: $red;
+    font-weight: 600;
+    text-align: right;
+    letter-spacing: 1.5px;
+  }
+
+  .grid {
+    display: grid;
+    grid-gap: 20px;
+
+    @include respond($mobile) {
+      margin-top: 70px;
+    }
+
+    @include respond(0, $mobile) {
+      margin-top: 25px;
+    }
+
+    @include respond(700px) {
+      grid-template-columns: repeat(auto-fit, minmax(600px, auto));
+    }
+
+  }
+}
