@@ -85,6 +85,7 @@ function buildcopy() {
         'app/images/**/*.*',
         '!app/images/src/**/*',
         'app/fonts/**/*',
+        'app/budget.json',
         'app/readme.md'
     ], {base: 'app/'})
         .pipe(dest('docs'))
