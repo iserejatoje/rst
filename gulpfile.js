@@ -45,7 +45,7 @@ function browsersync() {
 function scripts() {
     return src(['app/js/*.js', '!app/js/*.min.js'])
         .pipe(webpack({
-            mode: 'production',
+            mode: 'development',
             performance: {hints: false},
             module: {
                 rules: [

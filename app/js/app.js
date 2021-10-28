@@ -1,5 +1,5 @@
 import IMask from 'imask'
-import * as $ from 'jquery'
+// import * as $ from 'jquery'
 
 let mapShowed = false;
 
@@ -53,6 +53,6 @@ window.addEventListener('scroll', () => {
     }
 })
 
-$(function () {
-
-});
+// $(function () {
+//
+// });

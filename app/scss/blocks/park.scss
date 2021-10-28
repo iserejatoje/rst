@@ -52,13 +52,55 @@ section.numbers {
   }
 }
 
+.left-settings,
+.right-settings {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+
+  @include respond(0, $mobile) {
+    display: none;
+  }
+}
+
+.right-settings {
+  right: 0;
+  top: 100px;
+}
+
+.left-settings {
+  bottom: -182px;
+  left: 0;
+}
+
 section.models {
   background: $asphalt;
-  padding: 95px 0;
+  position: relative;
+  overflow: hidden;
+
+  @include respond($mobile) {
+    padding: 95px 0 82px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 40px 0 50px 0;
+  }
+
+  .bottom {
+    font-size: 18px;
+    text-align: right;
+    color: $color444;
+    padding-top: 30px;
+    letter-spacing: 0.5px;
+
+    span {
+      color: $red;
+    }
+  }
 
   .card {
     border: 1px solid $red;
     min-height: 300px;
+    background: $asphalt;
     padding: 35px 45px;
 
     .content {
@@ -121,6 +163,7 @@ section.models {
 
   .grid {
     display: grid;
+    position: relative;
     grid-gap: 20px;
 
     @include respond($mobile) {
@@ -132,8 +175,183 @@ section.models {
     }
 
     @include respond(700px) {
-      grid-template-columns: repeat(auto-fit, minmax(600px, auto));
+      grid-template-columns: repeat(auto-fit, minmax(540px, auto));
     }
 
+  }
+}
+
+section.masonry {
+  @include respond($mobile) {
+    padding: 84px 0 100px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 40px 0 50px 0;
+  }
+
+  .grid {
+    display: grid;
+
+    @include respond(0, $mobile) {
+      margin-top: 40px;
+      grid-gap: 15px;
+    }
+
+    @include respond($mobile) {
+      margin-top: 70px;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 100px 96px;
+      grid-template-rows: 212px 212px 282px;
+      gap: 17px 17px;
+      grid-template-areas:
+    "a a a b b b c c"
+    "a a a b b b c c"
+    "d d e e j j k k";
+
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+
+  @include respond($mobile) {
+    .a {
+      grid-area: a;
+    }
+    .b {
+      grid-area: b;
+    }
+    .c {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 17px 0;
+      grid-template-areas:
+    "."
+    ".";
+      grid-area: c;
+    }
+    .d {
+      grid-area: d;
+    }
+    .e {
+      grid-area: e;
+    }
+    .j {
+      grid-area: j;
+    }
+    .k {
+      grid-area: k;
+    }
+  }
+}
+
+section.advantages {
+  background: $asphalt;
+
+  @include respond($mobile) {
+    padding: 85px 0 100px 0;
+  }
+
+  @include respond(0, $mobile) {
+    padding: 40px 0 50px 0;
+  }
+
+  .heading-medium {
+    margin-bottom: 20px;
+  }
+
+  .content {
+    letter-spacing: 0.4px;
+  }
+
+  .grid {
+    @include respond(0, $mobile) {
+      margin-top: 30px;
+    }
+
+    @include respond($mobile) {
+      margin-top: 50px;
+    }
+
+    .card {
+      display: flex;
+
+      @include respond(0, $mobile) {
+        flex-direction: column;
+      }
+
+      @include respond($mobile) {
+        align-items: center;
+      }
+
+      .content {
+        @include respond($mobile) {
+          max-width: 600px;
+        }
+      }
+
+      img {
+        @include respond($mobile) {
+          max-width: 50%;
+        }
+        @include respond(0, $mobile) {
+          margin-top: 20px;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 60px;
+      }
+
+      &:nth-child(odd) {
+        .content {
+          padding-right: 30px;
+        }
+
+        img {
+          @include respond($mobile) {
+            margin-left: auto;
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        @include respond($mobile) {
+          flex-direction: row-reverse;
+        }
+        @include respond(0, $mobile) {
+          flex-direction: column;
+        }
+
+        .content {
+          @include respond($mobile) {
+            margin-left: auto;
+            padding-left: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+section.feedback {
+  background: $red;
+  min-height: 682px;
+  display: flex;
+  align-items: center;
+
+  .title {
+    font-size: 46px;
+    font-weight: 600;
+    text-align: center;
+    color: $white;
   }
 }

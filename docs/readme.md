@@ -5,3 +5,4 @@
 - [Руководство](https://iserejatoje.github.io/rst/management.html)
 - [Команда](https://iserejatoje.github.io/rst/team.html)
 - [Пресс-центр](https://iserejatoje.github.io/rst/press-center.html)
+- [Контакты](https://iserejatoje.github.io/rst/contacts.html)
