@@ -22,12 +22,13 @@ section.numbers {
   .grid {
     @include respond($mobile) {
       margin-top: 55px;
+      grid-gap: 35px;
     }
     @include respond(0, $mobile) {
       margin-top: 25px;
+      grid-gap: 15px;
     }
     display: grid;
-    grid-gap: 35px;
     @include respond(700px) {
       grid-template-columns: repeat(auto-fit, minmax(350px, auto));
     }
