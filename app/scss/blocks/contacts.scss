@@ -28,7 +28,7 @@ section.contacts {
       background: $red;
 
       @include respond(0, $mobile) {
-        padding: 55px 15px;
+        padding: 30px 15px;
       }
       @include respond($mobile) {
         max-width: 992px;
@@ -62,9 +62,15 @@ form {
 
   textarea {
     min-height: 116px;
-    margin-bottom: 62px;
     letter-spacing: .5px;
     resize: none;
+
+    @include respond($mobile) {
+      margin-bottom: 62px;
+    }
+    @include respond(0, $mobile) {
+      margin-bottom: 40px;
+    }
   }
 
   input,
@@ -103,15 +109,16 @@ form {
 .form-title {
   @include respond($laptop) {
     font-size: 46px;
+    letter-spacing: 2px;
+    margin-bottom: 34px;
   }
   @include respond(0, $laptop) {
+    margin-bottom: 25px;
     font-size: 30px;
   }
   font-weight: 600;
   color: $white;
   line-height: 1.304;
-  letter-spacing: 2px;
-  margin-bottom: 34px;
 }
 
 .preloader {
