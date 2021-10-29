@@ -20,7 +20,7 @@ section.contacts {
         padding-left: 35px;
       }
       @include respond(0, $mobile) {
-        padding: 35px 15px;
+        padding: 25px 15px;
       }
     }
 
@@ -232,7 +232,7 @@ form {
     margin: 20px 0 40px 0;
   }
   @include respond(0, $mobile) {
-    margin: 10px 0 25px 0;
+    margin: 10px 0 20px 0;
   }
 }
 
