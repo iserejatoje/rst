@@ -143,7 +143,12 @@ form {
 
   .address-item_icon {
     &:not(:last-child) {
-      margin-bottom: 26px;
+      @include respond($mobile) {
+        margin-bottom: 26px;
+      }
+      @include respond(0, $mobile) {
+        margin-bottom: 22px;
+      }
     }
 
     svg {
@@ -186,9 +191,14 @@ form {
 }
 
 .address-subheading {
-  font-size: 18px;
+  @include respond($mobile) {
+    font-size: 18px;
+    letter-spacing: 0.6px;
+  }
+  @include respond(0, $mobile) {
+    font-size: 16px;
+  }
   color: $dark;
-  letter-spacing: 0.6px;
   line-height: 1.556;
   text-align: left;
 }
@@ -225,7 +235,7 @@ form {
     letter-spacing: 0.9px;
   }
   @include respond(0, $mobile) {
-    font-size: 18px;
+    font-size: 16px;
   }
   font-weight: 600;
   line-height: 1.2;
