@@ -1,0 +1,161 @@
+section.about {
+  @include respond($mobile) {
+    padding: 84px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  @include respond(0, $mobile) {
+    padding: 35px 0;
+  }
+
+  .description-18 {
+    font-weight: 600;
+    @include respond($mobile) {
+      margin-bottom: 42px;
+    }
+    @include respond(0, $mobile) {
+      margin-bottom: 24px;
+    }
+
+  }
+
+  .about-text {
+    @include respond($mobile) {
+      font-size: 18px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 16px;
+    }
+    line-height: 1.556;
+    letter-spacing: 0.55px;
+
+    @include respond($laptop) {
+      max-width: 61%;
+      padding-right: 2%;
+    }
+
+    p {
+      margin: 0 0 12px 0;
+    }
+  }
+
+  .about-train {
+    @include respond(0, $laptop) {
+      margin-top: 25px;
+    }
+    @include respond($laptop) {
+      position: absolute;
+      right: 0;
+      top: 330px;
+      max-width: 39%;
+    }
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.history {
+  background: $asphalt;
+  position: relative;
+  overflow: hidden;
+
+  @include respond($mobile) {
+    padding: 85px 0 95px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 40px 0 50px 0;
+  }
+
+  .history-image {
+    @include respond(0, $mobile) {
+      display: none;
+    }
+    @include respond($mobile) {
+      position: absolute;
+      left: -50px;
+      top: -14px;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+
+  .year {
+    @include respond($laptop) {
+      font-size: 110px;
+    }
+    @include respond(0, $laptop) {
+      font-size: 56px;
+    }
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    line-height: 1.45;
+    max-width: 230px;
+    width: 100%;
+
+    span {
+      color: $red;
+    }
+  }
+
+  .grid {
+    padding-top: 12px;
+
+    @include respond(0, $mobile) {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+    }
+    @include respond($mobile, $laptop) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 45px;
+      grid-row-gap: 20px;
+    }
+  }
+
+  .card {
+
+    @include respond($laptop) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &:not(:last-child) {
+      @include respond($laptop) {
+        margin-bottom: 40px;
+      }
+    }
+
+    .line {
+      @include respond(0, $laptop) {
+        display: none;
+      }
+      @include respond($laptop) {
+        max-width: 75px;
+        width: 100%;
+        height: 2px;
+        background: $history-line;
+        display: block;
+      }
+    }
+
+    .text {
+      @include respond($laptop) {
+        font-size: 26px;
+      }
+      @include respond($mobile, $laptop) {
+        font-size: 22px;
+      }
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      line-height: 1.538;
+      text-align: left;
+      max-width: 775px;
+      width: 100%;
+    }
+  }
+}
