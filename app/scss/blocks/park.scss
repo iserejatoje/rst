@@ -52,7 +52,12 @@ section.numbers {
     .description {
       line-height: 1.625;
       letter-spacing: 0.3px;
-      max-width: 300px;
+      @include respond(0, $mobile) {
+        font-size: 15px;
+      }
+      @include respond($mobile) {
+        max-width: 300px;
+      }
     }
 
   }
@@ -136,9 +141,6 @@ section.models {
     .description {
       letter-spacing: 0.3px;
 
-      @include respond(0, $mobile) {
-        font-size: 15px;
-      }
       @include respond($mobile) {
         max-width: 360px;
       }
