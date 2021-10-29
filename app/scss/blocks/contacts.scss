@@ -45,38 +45,40 @@ section.contacts {
     }
   }
 
-  form {
-    display: flex;
-    flex-direction: column;
+}
 
-    input[type="tel"],
-    input[type="email"] {
-      line-height: 36px;
-      margin-bottom: 26px;
-      letter-spacing: .5px;
-    }
+form {
+  display: flex;
+  flex-direction: column;
 
-    textarea {
-      min-height: 116px;
-      margin-bottom: 62px;
-      letter-spacing: .5px;
-      resize: none;
-    }
-
-    input,
-    textarea {
-      @extend .empty;
-      border-bottom: 2px solid $white;
-      font-size: 18px;
-      font-weight: 400;
-      color: $white;
-
-      &::placeholder {
-        color: $white;
-      }
-    }
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"] {
+    line-height: 36px;
+    margin-bottom: 26px;
+    letter-spacing: .5px;
+    width: 100%;
   }
 
+  textarea {
+    min-height: 116px;
+    margin-bottom: 62px;
+    letter-spacing: .5px;
+    resize: none;
+  }
+
+  input,
+  textarea {
+    @extend .empty;
+    border-bottom: 2px solid $white;
+    font-size: 18px;
+    font-weight: 400;
+    color: $white;
+
+    &::placeholder {
+      color: $white;
+    }
+  }
 }
 
 .send-button {

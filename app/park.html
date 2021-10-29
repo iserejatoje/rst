@@ -263,6 +263,14 @@
 <section class="feedback">
     <div class="container">
         <div class="title">Оставить заявку</div>
+
+        <form autocomplete="off" action="" class="feedback" method="post" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" name="action" value="feedback">
+            <input required="" type="text" name="firstname" placeholder="Имя">
+            <input required="" type="tel" name="phone" placeholder="Номер телефона">
+            <input required="" type="email" name="email" placeholder="E-mail">
+            <button class="send-button">Отправить заявку</button>
+        </form>
     </div>
 </section>
 

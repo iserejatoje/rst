@@ -101,7 +101,14 @@ section.models {
     border: 1px solid $red;
     min-height: 300px;
     background: $asphalt;
-    padding: 35px 45px;
+
+    @include respond($mobile) {
+      padding: 35px 45px;
+    }
+
+    @include respond(0, $mobile) {
+      padding: 25px;
+    }
 
     .content {
       padding-top: 30px;
@@ -135,6 +142,7 @@ section.models {
       display: none;
     }
 
+    &:active,
     &:hover {
       color: $white;
       background: $red;
@@ -344,14 +352,37 @@ section.advantages {
 
 section.feedback {
   background: $red;
-  min-height: 682px;
+  @include respond($mobile) {
+    min-height: 682px;
+  }
+  @include respond(0, $mobile) {
+    padding: 40px 0 50px 0;
+  }
   display: flex;
   align-items: center;
 
+  form {
+    max-width: 628px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .send-button {
+    margin-top: 32px;
+  }
+
   .title {
-    font-size: 46px;
+    @include respond($mobile) {
+      font-size: 46px;
+    }
+    @include respond(0, $mobile) {
+      font-size: 32px;
+    }
+    line-height: 1.304;
     font-weight: 600;
     text-align: center;
     color: $white;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
   }
 }
