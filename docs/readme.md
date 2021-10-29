@@ -6,3 +6,4 @@
 - [Команда](https://iserejatoje.github.io/rst/team.html)
 - [Пресс-центр](https://iserejatoje.github.io/rst/press-center.html)
 - [Контакты](https://iserejatoje.github.io/rst/contacts.html)
+- [О компании](https://iserejatoje.github.io/rst/about.html)
