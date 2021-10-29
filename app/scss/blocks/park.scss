@@ -36,12 +36,12 @@ section.numbers {
     .title {
       @include respond($mobile) {
         font-size: 34px;
+        letter-spacing: 1.5px;
       }
       @include respond(0, $mobile) {
-        font-size: 26px;
+        font-size: 24px;
       }
       font-weight: 600;
-      letter-spacing: 1.5px;
       margin-bottom: 5px;
 
       span {
@@ -135,7 +135,13 @@ section.models {
 
     .description {
       letter-spacing: 0.3px;
-      max-width: 360px;
+
+      @include respond(0, $mobile) {
+        font-size: 15px;
+      }
+      @include respond($mobile) {
+        max-width: 360px;
+      }
     }
 
     .title {
