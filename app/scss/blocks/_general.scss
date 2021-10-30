@@ -55,6 +55,8 @@ header {
         left: 0;
         right: 0;
         background: $blue;
+        pointer-events: none;
+        user-select: none;
       }
 
       &.active,
