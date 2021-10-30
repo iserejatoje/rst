@@ -29,20 +29,33 @@ section.services {
       @include respond(0, $laptop) {
         padding: 15px;
       }
+      @include respond(0, $mobile) {
+        background: $red;
+      }
       color: $white;
       display: flex;
       flex-direction: column;
       justify-content: center;
 
-      &:after {
-        content: '';
-        position: absolute;
-        pointer-events: none;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background: transparentize($red, .3);
+      img {
+        @include respond(0, $mobile) {
+          display: none;
+        }
+      }
+
+      @include respond($mobile) {
+
+        &:after {
+          content: '';
+          position: absolute;
+          pointer-events: none;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background: transparentize($red, .3);
+        }
+
       }
     }
 
