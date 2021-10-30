@@ -65,7 +65,12 @@ section.services {
     }
 
     .button {
-      height: 60px;
+      @include respond($mobile) {
+        height: 60px;
+      }
+      @include respond(0, $mobile) {
+        height: 40px;
+      }
       width: 100%;
       background: $white;
       display: flex;
