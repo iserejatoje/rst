@@ -12,17 +12,12 @@ section.services {
     @include respond($mobile) {
       grid-gap: 30px;
       grid-template-columns: 1fr 1fr;
+      margin-top: 72px;
     }
     @include respond(0, $mobile) {
       grid-template-columns: 1fr;
       grid-gap: 15px;
-    }
-
-    @include respond($mobile) {
-      margin-top: 72px;
-    }
-    @include respond(0, $mobile) {
-      margin-top: 30px;
+      margin-top: 25px;
     }
 
     .content {
@@ -54,11 +49,12 @@ section.services {
     .title {
       @include respond($mobile) {
         margin-bottom: 55px;
+        font-size: 18px;
       }
       @include respond(0, $mobile) {
         margin-bottom: 20px;
+        font-size: 16px;
       }
-      font-size: 18px;
       font-weight: 600;
     }
 
