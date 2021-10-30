@@ -41,18 +41,47 @@ function close_service() {
     document.body.classList.remove('service_popup-opened')
 }
 
+const trainDistance = 190
+
+function initTrain() {
+    if (window.scrollY > trainDistance) {
+        document.querySelector('.train').classList.add('fade-in')
+    } else {
+        document.querySelector('.train').classList.remove('fade-in')
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initTrain()
+})
+
+window.addEventListener('scroll', () => {
+    initTrain()
+})
+
+const train = document.querySelector('.train')
+train.addEventListener('click', event => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
+})
+
 document.querySelectorAll('.close-menu').forEach(button => {
     button.addEventListener('click', event => {
         close_service()
     })
 })
 
-document.querySelector('.load-more').addEventListener('click', event => {
-    event.target.parentElement.removeChild(event.target);
-    document.querySelectorAll('.hidden').forEach(card => {
-        card.classList.remove('hidden')
+const load_more = document.querySelector('.load-more')
+if (load_more) {
+    load_more.addEventListener('click', event => {
+        event.target.parentElement.removeChild(event.target);
+        document.querySelectorAll('.hidden').forEach(card => {
+            card.classList.remove('hidden')
+        })
     })
-})
+}
 
 document.querySelectorAll('.overlay').forEach(overlay => {
     overlay.addEventListener('click', event => {

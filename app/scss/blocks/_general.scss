@@ -391,3 +391,36 @@ h1 {
     }
   }
 }
+
+.container-train {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.train {
+  position: fixed;
+  bottom: 250px;
+  z-index: 1;
+  width: 46px;
+  height: 46px;
+  background: $red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: $white;
+    transform: rotate(270deg);
+  }
+}
+
+.fade-in {
+  opacity: 1;
+  visibility: visible;
+}

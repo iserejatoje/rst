@@ -44,7 +44,6 @@ section.services {
       }
 
       @include respond($mobile) {
-
         &:after {
           content: '';
           position: absolute;
@@ -55,7 +54,6 @@ section.services {
           bottom: 0;
           background: transparentize($red, .3);
         }
-
       }
     }
 
@@ -185,6 +183,8 @@ section.services {
 
       .content {
         justify-content: space-between;
+
+        background: $gray;
 
         &:after {
           background: $gray;
