@@ -1,0 +1,440 @@
+section.services {
+  @include respond($mobile) {
+    padding: 82px 0 100px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 30px 0;
+  }
+
+  .grid {
+    display: grid;
+
+    @include respond($mobile) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include respond(0, $mobile) {
+      grid-template-columns: 1fr;
+    }
+    grid-gap: 30px;
+
+    @include respond($mobile) {
+      margin-top: 72px;
+    }
+    @include respond(0, $mobile) {
+      margin-top: 30px;
+    }
+
+    .content {
+      position: relative;
+      height: 100%;
+      @include respond($laptop) {
+        padding: 50px;
+      }
+      @include respond(0, $laptop) {
+        padding: 20px;
+      }
+      color: $white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &:after {
+        content: '';
+        position: absolute;
+        pointer-events: none;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: transparentize($red, .3);
+      }
+    }
+
+    .title {
+      margin-bottom: 55px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .title,
+    .button {
+      position: relative;
+      z-index: 1;
+    }
+
+    .button {
+      height: 60px;
+      width: 100%;
+      background: $white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      font-weight: 600;
+      color: $red;
+      transition: background 200ms ease-in-out, color 200ms ease-in-out;
+
+      &:hover {
+        background: $red;
+        color: $white;
+      }
+    }
+
+    .card {
+      @include respond($mobile) {
+        min-height: 338px;
+      }
+      position: relative;
+    }
+  }
+
+  .employee {
+    position: relative;
+    z-index: 1;
+    display: none;
+    padding: 12px 0;
+
+    .name {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .phone {
+      display: inline-flex;
+      font-size: 15px;
+      letter-spacing: 0.3px;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .email {
+      color: $white;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      letter-spacing: 0.3px;
+      font-size: 15px;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      @include respond(0, $laptop) {
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+
+      @include respond($laptop) {
+        width: 50%;
+      }
+    }
+
+    svg {
+      fill: $white;
+      margin-right: 10px;
+    }
+  }
+
+  .hidden-text {
+    display: none;
+  }
+
+  .card {
+    &:active,
+    &:hover {
+
+      border: 1px solid $red;
+
+      .title {
+        margin-bottom: 0;
+      }
+
+      .employee {
+        display: flex;
+        @include respond(0, $laptop) {
+          flex-direction: column;
+        }
+
+      }
+
+      .content {
+        justify-content: space-between;
+
+        &:after {
+          background: $gray;
+        }
+      }
+    }
+  }
+
+  .bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    object-fit: cover;
+    pointer-events: none;
+    user-select: none;
+    height: 100%;
+    width: 100%;
+  }
+
+}
+
+section.transport {
+  background: $asphalt;
+  position: relative;
+
+  .transport-settings {
+    @include respond(1638px) {
+      position: absolute;
+      left: 0;
+      top: 170px;
+      pointer-events: none;
+      user-select: none;
+
+    }
+    @include respond(0, 1638px) {
+      display: none;
+    }
+  }
+
+  @include respond($mobile) {
+    padding: 84px 0 100px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 40px 0 50px 0;
+  }
+
+  .grid {
+    display: grid;
+    position: relative;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @include respond($mobile) {
+      margin-top: 50px;
+    }
+    @include respond(0, $mobile) {
+      margin-top: 20px;
+    }
+    @include respond($mobile) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include respond(900px, $mobile) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond($laptop) {
+      grid-column-gap: 80px;
+      grid-row-gap: 45px;
+    }
+    @include respond(0, $laptop) {
+      grid-column-gap: 30px;
+      grid-row-gap: 30px;
+    }
+
+    .title {
+      max-width: 340px;
+      line-height: 1.5;
+
+      @include respond($mobile) {
+        margin-top: 20px;
+      }
+      @include respond(0, $mobile) {
+        margin-top: 12px;
+      }
+
+      letter-spacing: 0.2px;
+
+      b,
+      strong {
+        font-weight: 600;
+        letter-spacing: 0.8px;
+      }
+    }
+  }
+}
+
+section.complex {
+  background: $white;
+
+  @include respond($mobile) {
+    padding: 85px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 45px 0 50px 0;
+  }
+
+  .icon {
+    max-width: 80px;
+    width: 100%;
+    margin-right: 28px;
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+
+    .title {
+      max-width: 216px;
+      line-height: 1.563;
+      letter-spacing: .3px;
+    }
+  }
+
+  .grid {
+    @include respond($mobile) {
+      grid-row-gap: 60px;
+      margin-top: 60px;
+    }
+    @include respond(0, $mobile) {
+      margin-top: 30px;
+      grid-row-gap: 30px;
+    }
+    display: grid;
+    @include respond(600px) {
+      grid-template-columns: repeat(auto-fit, minmax(380px, auto));
+    }
+  }
+
+  svg {
+    max-width: 80px;
+    max-height: 80px;
+    fill: $red;
+  }
+}
+
+section.truth {
+  background: $asphalt;
+  position: relative;
+  overflow: hidden;
+
+  .truth-right {
+    right: -182px;
+    top: 370px;
+  }
+
+  .truth-left {
+    left: -175px;
+    top: 210px;
+  }
+
+  .truth-left,
+  .truth-right {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+
+    @include respond(0, $laptop) {
+      display: none;
+    }
+  }
+
+  @include respond($mobile) {
+    padding: 85px 0 94px 0;
+  }
+  @include respond(0, $mobile) {
+    padding: 50px 0;
+  }
+
+  .load-more {
+    color: $red;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    margin-top: 40px;
+  }
+
+  .grid {
+
+    @include respond($mobile) {
+      margin-top: 70px;
+    }
+    @include respond(0, $mobile) {
+      margin-top: 30px;
+    }
+
+    display: grid;
+    grid-gap: 30px;
+
+    @include respond($mobile) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include respond(0, $mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.778;
+    color: $red;
+    letter-spacing: .7px;
+  }
+
+  .text {
+    line-height: 1.625;
+    flex: 1;
+    margin-top: 22px;
+  }
+
+  .quote {
+    position: absolute;
+    @include respond($mobile) {
+      right: 50px;
+      top: 40px;
+    }
+    @include respond(0, $mobile) {
+      position: absolute;
+      right: 25px;
+      top: 23px;
+    }
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+  }
+
+  .name {
+    font-weight: 600;
+    padding-top: 26px;
+  }
+
+  .role {
+    font-size: 14px;
+  }
+
+  .card {
+    border: 1px solid $review-border;
+    background: $white;
+    position: relative;
+    @include respond($mobile) {
+      min-height: 510px;
+    }
+    display: flex;
+    flex-direction: column;
+
+    @include respond($mobile) {
+      padding: 40px 50px;
+    }
+    @include respond(0, $mobile) {
+      padding: 25px;
+    }
+  }
+
+
+  .hidden {
+    display: none;
+  }
+
+}

@@ -310,3 +310,82 @@ h1 {
   position: relative;
   overflow: hidden;
 }
+
+.service_popup-opened {
+  .overlay {
+    display: flex;
+  }
+}
+
+.overlay {
+  background: $overlay;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  position: fixed;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  overflow: auto;
+  display: none;
+
+  .popup {
+    max-width: 575px;
+    width: 100%;
+    min-height: 385px;
+    background: $white;
+    position: relative;
+    margin: auto;
+
+    .content {
+      padding: 45px;
+    }
+
+    .title {
+      font-weight: 600;
+      color: $red;
+      padding-right: 30px;
+    }
+
+    .close-menu {
+      padding: 8px;
+      width: 44px;
+      height: 44px;
+      border: 1px solid $red;
+      position: absolute;
+      z-index: 10;
+      right: 10px;
+      top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 200ms ease-in-out;
+
+      &:hover {
+        background: $red;
+        svg {
+          fill: $white;
+        }
+      }
+    }
+
+    svg {
+      fill: $red;
+      display: block;
+      transition: fill 200ms ease-in-out;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      border: 1px solid $red;
+      left: 10px;
+      right: 10px;
+      top: 10px;
+      pointer-events: none;
+      bottom: 10px;
+    }
+  }
+}

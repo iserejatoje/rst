@@ -63,6 +63,18 @@ section.numbers {
   }
 }
 
+.feedback-left {
+  left: 0;
+  bottom: 0;
+}
+
+.feedback-left,
+.feedback-right {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+
 .left-settings,
 .right-settings {
   position: absolute;
@@ -365,6 +377,9 @@ section.advantages {
 }
 
 section.feedback {
+  position: relative;
+  overflow: hidden;
+  
   background: $red;
   @include respond($mobile) {
     min-height: 682px;
@@ -390,7 +405,7 @@ section.feedback {
       font-size: 46px;
     }
     @include respond(0, $mobile) {
-      font-size: 32px;
+      font-size: 26px;
     }
     line-height: 1.304;
     font-weight: 600;
