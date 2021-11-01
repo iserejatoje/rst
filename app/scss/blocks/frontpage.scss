@@ -34,15 +34,14 @@ section.about-frontpage {
   .about-text {
     @include respond($mobile) {
       font-size: 18px;
+      letter-spacing: 0.5px;
     }
     @include respond(0, $mobile) {
       font-size: 16px;
     }
     line-height: 1.556;
     padding-top: 10px;
-    letter-spacing: 0.5px;
     max-width: 700px;
-
     p:last-child {
       max-width: 470px;
     }
