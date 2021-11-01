@@ -68,6 +68,19 @@ function scripts() {
         .pipe(browserSync.stream())
 }
 
+function swiperjs() {
+    return src('app/js/swiperjs.min.js')
+        .pipe(webpack({
+            mode: 'production',
+            performance: {hints: false},
+        })).on('error', function handleError() {
+            this.emit('end')
+        })
+        .pipe(rename('swiper.min.js'))
+        .pipe(dest('app/js'))
+        .pipe(browserSync.stream())
+}
+
 function styles() {
     return src([`app/scss/*.*`, `!app/scss/_*.*`])
         .pipe(eval(`${preprocessor}glob`)())
@@ -110,6 +123,7 @@ function startwatch() {
 exports.scripts = scripts
 exports.styles = styles
 exports.sprites = sprites
+exports.swiperjs = swiperjs
 exports.assets = series(scripts, styles)
 exports.build = series(cleandist, scripts, styles, buildcopy, buildhtml)
 exports.default = series(scripts, styles, parallel(browsersync, startwatch))

@@ -129,6 +129,20 @@ nav {
 }
 
 .app-panel {
+  .right {
+    display: flex;
+    align-items: center;
+
+    .search {
+      margin-right: 30px;
+    }
+
+    svg {
+      fill: $blue;
+      display: block;
+    }
+  }
+
   a {
     color: $white;
     text-decoration: none;
@@ -247,7 +261,7 @@ h1 {
 
 }
 
-.description-18 {
+.text-18 {
   @include respond($mobile) {
     letter-spacing: .6px;
     font-size: 18px;
@@ -262,6 +276,7 @@ h1 {
   &_red {
     color: $red;
   }
+
   @include respond($laptop) {
     font-size: 32px;
   }
@@ -367,6 +382,7 @@ h1 {
 
       &:hover {
         background: $red;
+
         svg {
           fill: $white;
         }
@@ -400,7 +416,7 @@ h1 {
 
 .train {
   position: fixed;
-  bottom: 250px;
+  bottom: 65px;
   z-index: 1;
   width: 46px;
   height: 46px;

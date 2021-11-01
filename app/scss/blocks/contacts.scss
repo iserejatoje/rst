@@ -14,7 +14,7 @@ section.contacts {
     &:first-child {
 
       @include respond(1360px) {
-        padding-left: calc((100% - 1330px) / 2);
+        padding-left: calc((100% - 1315px) / 2);
       }
       @include respond($mobile, 1360px) {
         padding-left: 35px;
@@ -35,7 +35,7 @@ section.contacts {
         width: 100%;
       }
       @include respond(1360px) {
-        padding-right: calc((100% - 1330px) / 2);
+        padding-right: calc((100% - 1315px) / 2);
         padding-left: 150px;
       }
       @include respond($mobile, 1360px) {

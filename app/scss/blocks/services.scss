@@ -165,10 +165,6 @@ section.services {
     &:active,
     &:hover {
 
-      .content {
-        box-shadow: inset 0 0 0 1px $red;
-      }
-
       .title {
         margin-bottom: 0;
       }
@@ -438,7 +434,7 @@ section.truth {
   }
 
   .card {
-    border: 1px solid $review-border;
+    border: 1px solid $border-gray;
     background: $white;
     position: relative;
     @include respond($mobile) {

@@ -35,7 +35,7 @@
 	},
 	"dependencies": {
 		"imask": "^6.2.2",
-		"jquery": "^3.6.0",
-		"swiper": "^7.0.9"
+		"swiper": "6.8.4",
+		"jquery": "^3.6.0"
 	}
 }

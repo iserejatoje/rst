@@ -1,5 +1,4 @@
 import IMask from 'imask'
-
 let mapShowed = false
 
 const phoneMask = document.querySelectorAll('[type="tel"]')
