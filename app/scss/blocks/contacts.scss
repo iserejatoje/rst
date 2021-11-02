@@ -47,6 +47,14 @@ section.contacts {
 
 }
 
+.contact-form {
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"] {
+    margin-bottom: 26px;
+  }
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -55,7 +63,6 @@ form {
   input[type="tel"],
   input[type="email"] {
     line-height: 36px;
-    margin-bottom: 26px;
     letter-spacing: .5px;
     width: 100%;
   }
