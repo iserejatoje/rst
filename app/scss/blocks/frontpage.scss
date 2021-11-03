@@ -214,7 +214,7 @@ section.clients {
   }
 
   @include respond(0, $laptop) {
-    padding: 35px 0 50px 0;
+    padding: 0 0 50px 0;
   }
 
   .grid {
@@ -692,6 +692,21 @@ section.trusted {
   }
 }
 
+.static-header {
+  @include respond($mobile) {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    transition: top 200ms ease-in-out;
+
+    &.hidden {
+      top: -110px;
+    }
+  }
+}
+
 section.request {
 
   .address-block {
@@ -770,7 +785,7 @@ section.request {
 
   .controls {
     display: grid;
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr;
     grid-column-gap: 65px;
     @include respond($laptop) {
       grid-row-gap: 40px;
@@ -784,11 +799,13 @@ section.request {
       @include respond($laptop) {
         max-width: calc(50% - 30px);
       }
+
       &:first-child {
         @include respond(0, $laptop) {
           margin-bottom: 30px;
         }
       }
+
       width: 100%;
     }
 
@@ -873,5 +890,299 @@ section.request {
     svg {
       display: none;
     }
+  }
+}
+
+section.elevator {
+  position: sticky;
+  top: 0;
+  height: 80px;
+  background: $white;
+  z-index: 10;
+
+  @include respond(0, $mobile) {
+    display: none;
+  }
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .request-button {
+    background: $red;
+    color: $white;
+    max-width: 240px;
+    width: 100%;
+    font-weight: 600;
+    letter-spacing: .7px;
+    height: 80px;
+  }
+
+  nav {
+    display: flex;
+
+    a {
+      font-weight: 300;
+      text-decoration: none;
+      color: $dark;
+      font-size: 16px;
+      text-transform: uppercase;
+      position: relative;
+      height: 80px;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      &:after {
+        content: '';
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 3px;
+        background: $red;
+        pointer-events: none;
+        transition: opacity 200ms ease-in-out;
+      }
+
+      &:not(:last-child) {
+        @include respond($laptop) {
+          margin-right: 65px;
+        }
+        @include respond($mobile, $laptop) {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+}
+
+section.first-screen {
+  background: $dark;
+  overflow: hidden;
+  position: relative;
+
+  .advantages {
+    display: flex;
+    color: $white;
+    @include respond($mobile) {
+      max-width: 768px;
+      margin-left: 34px;
+    }
+
+    @include respond(0, $mobile) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include respond(1367px) {
+      margin-top: 74px;
+    }
+    @include respond(0, 1367px) {
+      margin-top: 30px;
+    }
+
+    .icon {
+      position: absolute;
+      background: $dark;
+      left: -35px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+
+      @include respond(0, $mobile) {
+        display: none;
+      }
+    }
+
+    .content {
+      line-height: 1.714;
+    }
+
+    .card {
+      position: relative;
+      border: 1px solid $white;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+
+      @include respond($mobile) {
+        padding-left: 60px;
+        padding-right: 40px;
+      }
+
+      @include respond(0, $mobile) {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      font-size: 14px;
+      font-weight: 400;
+
+      &:first-child {
+        @include respond(0, $mobile) {
+          margin-bottom: 15px;
+        }
+        @include respond($mobile) {
+          margin-right: 65px;
+        }
+      }
+    }
+  }
+
+  .description {
+    font-size: 16px;
+    color: $white;
+    max-width: 660px;
+    line-height: 1.625;
+    margin-top: 38px;
+    @include respond($mobile) {
+      letter-spacing: .3px;
+    }
+  }
+
+  .our-services {
+    margin-top: 48px;
+
+    .top {
+      display: flex;
+      align-items: center;
+    }
+
+    .grid {
+      display: grid;
+      @include respond($laptop) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 30px;
+      }
+      @include respond(0, $mobile) {
+        grid-gap: 20px;
+      }
+      @include respond($mobile, $laptop) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+      }
+      margin-top: 25px;
+      color: $white;
+    }
+
+    .card {
+      border: 2px solid $red;
+      font-size: 14px;
+      font-weight: 600;
+      min-height: 106px;
+      text-decoration: none;
+      color: $white;
+      padding: 0 26px;
+      display: flex;
+      background: $dark;
+      align-items: center;
+      transition: background 200ms ease-in-out, color 200ms ease-in-out;
+
+      &:hover {
+        background: $red;
+        color: $white;
+      }
+    }
+
+    .line {
+      height: 2px;
+      max-width: 68px;
+      width: 100%;
+      background: $white;
+      display: block;
+      margin-right: 30px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: 600;
+      color: $white;
+      letter-spacing: 1px;
+    }
+  }
+
+  @include respond(1367px) {
+    padding-top: 190px;
+    min-height: 1070px;
+  }
+  @include respond($laptop, 1367px) {
+    padding-bottom: 100px;
+    padding-top: 135px;
+  }
+  @include respond($mobile, $laptop) {
+    padding-top: 158px;
+    min-height: 930px;
+  }
+  @include respond(0, $mobile) {
+    padding: 20px 0 40px 0;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .left-bottom {
+    position: absolute;
+    left: -260px;
+    bottom: -260px;
+    @include respond(0, 1367px) {
+      display: none;
+    }
+  }
+
+  .circle {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    top: 0;
+    right: -13px;
+    z-index: 0;
+
+    @include respond($laptop, 1367px) {
+      max-width: 60%;
+    }
+
+    @include respond(0, $laptop) {
+      display: none;
+    }
+  }
+
+  .right-bottom {
+    position: absolute;
+    right: -260px;
+    bottom: -260px;
+    @include respond(0, 1367px) {
+      display: none;
+    }
+  }
+}
+
+.heading-large {
+  @include respond($laptop) {
+    font-size: 46px;
+    letter-spacing: 1.9px;
+  }
+  @include respond($laptop, 1367px) {
+    font-size: 36px;
+  }
+  @include respond(0, $laptop) {
+    font-size: 25px;
+  }
+  color: $white;
+  font-weight: 600;
+  line-height: 1.304;
+
+  span {
+    color: $red;
+    display: block;
   }
 }

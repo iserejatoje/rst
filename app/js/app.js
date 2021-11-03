@@ -1,5 +1,6 @@
 import IMask from 'imask'
 let mapShowed = false
+import * as $ from 'jquery'
 
 const phoneMask = document.querySelectorAll('[type="tel"]')
 phoneMask.forEach(element => IMask(element, {
@@ -115,4 +116,28 @@ window.addEventListener('scroll', () => {
             }
         }
     }
+})
+
+$(window).scroll(function (e) {
+    if ($(window).scrollTop() > 10) {
+        $('header').addClass('hidden')
+    } else {
+        $('header').removeClass('hidden')
+    }
+})
+
+$(document).keyup(function(e) {
+    if (e.key === "Escape") {
+        $('body').removeClass('menu-opened')
+        close_service()
+    }
+});
+
+$(function () {
+    $('.burger').click(function (e) {
+        $('body').addClass('menu-opened')
+    })
+    $('.close-button').click(function (e) {
+        $('body').removeClass('menu-opened')
+    })
 })

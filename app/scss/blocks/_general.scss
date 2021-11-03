@@ -27,12 +27,24 @@
 header {
   @include respond($mobile) {
     padding: 0 42px;
-    min-height: 120px;
+    min-height: 104px;
   }
-  @include respond(0, $mobile) {
+  @include respond(1367px) {
+    padding: 0 42px;
+  }
+
+  @include respond(0, 1367px) {
     padding: 15px;
   }
-  background: $dark;
+
+  &:not(.static-header) {
+    background: $dark;
+  }
+
+  @include respond(0, $mobile) {
+    background: $dark;
+  }
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -330,12 +342,36 @@ h1 {
 
 .service_popup-opened {
   .overlay-service {
+    background: $overlay;
     display: flex;
   }
 }
 
+.close-button {
+  position: absolute;
+  right: 10px;
+  top: 28px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    fill: $white;
+  }
+}
+
+.menu-opened {
+  overflow: hidden;
+
+  .overlay-menu {
+    display: block;
+    background: $dark;
+  }
+}
+
 .overlay {
-  background: $overlay;
   left: 0;
   right: 0;
   bottom: 0;
@@ -412,6 +448,10 @@ h1 {
   display: flex;
   justify-content: flex-end;
   position: relative;
+
+  @include respond(0, $mobile) {
+    display: none;
+  }
 }
 
 .train {
